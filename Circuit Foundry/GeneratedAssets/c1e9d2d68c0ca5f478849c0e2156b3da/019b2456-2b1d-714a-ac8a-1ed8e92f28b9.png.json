@@ -1,0 +1,20 @@
+{
+    "asset": "c1e9d2d68c0ca5f478849c0e2156b3da",
+    "fileName": "019b2456-2b1d-714a-ac8a-1ed8e92f28b9.png",
+    "prompt": "Small electronic circuit board, studio lights, light background",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "f17878ba92b8b111e6e03b0707f8db03",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

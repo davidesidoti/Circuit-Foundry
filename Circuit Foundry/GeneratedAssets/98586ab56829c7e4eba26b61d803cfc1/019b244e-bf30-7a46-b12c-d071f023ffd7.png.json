@@ -1,0 +1,20 @@
+{
+    "asset": "98586ab56829c7e4eba26b61d803cfc1",
+    "fileName": "019b244e-bf30-7a46-b12c-d071f023ffd7.png",
+    "prompt": "Small chunk of iron ore, bold outlines",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "a479d9d33bc351ac22abf3701a536c4e",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

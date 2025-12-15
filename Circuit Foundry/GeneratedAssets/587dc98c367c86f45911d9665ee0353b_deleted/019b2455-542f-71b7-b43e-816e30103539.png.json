@@ -1,0 +1,20 @@
+{
+    "asset": "587dc98c367c86f45911d9665ee0353b",
+    "fileName": "019b2455-542f-71b7-b43e-816e30103539.png",
+    "prompt": "Small green circuit board, PCB material, bold outlines, pastel light background",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "4dc74065005dca7331632bfc0c0ce66d",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

@@ -1,0 +1,20 @@
+{
+    "asset": "817088666ca6b2149b78ddca2b36e97c",
+    "fileName": "019b2453-5a90-756e-a5b7-44af4539c34e.png",
+    "prompt": "Small green circuit, PCB material, bold outlines",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "cc927bad037b1b4beb12116ae8c6ec83",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}
