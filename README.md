@@ -1,4 +1,4 @@
-### Circuit Foundry
+## Circuit Foundry
 
 Circuit Foundry is a 2.5D automation game where you build a factory and program robots to do the work. Start manual, then automate everything with conveyors, machines, power networks, and a swarm of bots you can literally script.
 
