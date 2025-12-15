@@ -87,6 +87,19 @@ namespace CircuitFoundry.Grid
             return Place(origin, tileType, layer, rotation, out _);
         }
 
+        public bool CanPlace(Vector2Int origin, TileType tileType, GridLayer layer, TileRotation rotation)
+        {
+            EnsureLayers();
+            if (!definitionLookup.TryGetValue(tileType, out var definition))
+            {
+                Debug.LogWarning($"No tile definition found for {tileType}", this);
+                return false;
+            }
+
+            var footprint = BuildFootprint(origin, definition, rotation);
+            return IsAreaFree(footprint, layer);
+        }
+
         public bool Place(Vector2Int origin, TileType tileType, GridLayer layer, TileRotation rotation, out GridOccupant occupant)
         {
             EnsureLayers();

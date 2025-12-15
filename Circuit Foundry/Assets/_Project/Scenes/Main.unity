@@ -3342,7 +3342,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: -10, y: 15, z: -19}
+  m_LocalPosition: {x: 8, y: 13, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24425,23 +24425,7 @@ MonoBehaviour:
   grid: {fileID: 1800000001}
   clearBeforePlacing: 1
   logFailures: 1
-  placements:
-  - origin: {x: 3, y: 2}
-    layer: 0
-    tileType: 0
-    rotation: 0
-  - origin: {x: 6, y: 0}
-    layer: 1
-    tileType: 1
-    rotation: 90
-  - origin: {x: 4, y: 7}
-    layer: 2
-    tileType: 2
-    rotation: 0
-  - origin: {x: 11, y: 6}
-    layer: 2
-    tileType: 3
-    rotation: 270
+  placements: []
 --- !u!1 &1800781855
 GameObject:
   m_ObjectHideFlags: 0
@@ -28586,6 +28570,64 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100626005}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2111111109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111111110}
+  - component: {fileID: 2111111111}
+  m_Layer: 0
+  m_Name: PlacementTool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2111111110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111111109}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2111111111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111111109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c26efca90245e78e30866b259e404b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1800000001}
+  targetCamera: {fileID: 330585545}
+  beltPrefab: {fileID: 8008099473114935379, guid: b9a568abd16619444b41a5921323c930, type: 3}
+  ghostPrefab: {fileID: 8008099473114935379, guid: 79166e455007a1547a4df8a591cd6549, type: 3}
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  raycastDistance: 200
+  layer: 0
+  beltTileType: 0
+  rotateLeftKey: 113
+  rotateRightKey: 101
+  toggleRemoveModeKey: 114
+  ghostHeightOffset: 0.05
 --- !u!1 &2112489651
 GameObject:
   m_ObjectHideFlags: 0
@@ -29490,3 +29532,4 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1696776285}
+  - {fileID: 2111111110}
