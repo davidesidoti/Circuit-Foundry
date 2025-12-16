@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: plate
   displayName: Plate
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 13035c80893c4b349956bf3d58f97935, type: 3}
   tags:
   - resource
   - refined

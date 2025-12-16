@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: circuit
   displayName: Circuit
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c1e9d2d68c0ca5f478849c0e2156b3da, type: 3}
   tags:
   - intermediate
   - electronics

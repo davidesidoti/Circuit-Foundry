@@ -9,6 +9,7 @@ namespace CircuitFoundry.Grid
         [Header("References")]
         [SerializeField] private GridManager grid;
         [SerializeField] private Camera targetCamera;
+        [SerializeField] private BeltNetwork beltNetwork;
         [SerializeField] private GameObject beltPrefab;
         [SerializeField] private GameObject ghostPrefab;
         [SerializeField] private LayerMask raycastMask = ~0;
@@ -42,6 +43,11 @@ namespace CircuitFoundry.Grid
             if (targetCamera == null)
             {
                 targetCamera = Camera.main;
+            }
+
+            if (beltNetwork == null)
+            {
+                beltNetwork = FindObjectOfType<BeltNetwork>();
             }
 
             SpawnGhost();
@@ -216,6 +222,7 @@ namespace CircuitFoundry.Grid
             if (grid.Place(hitCell, beltTileType, layer, rotation, out var occupant))
             {
                 SpawnBeltVisual(occupant);
+                beltNetwork?.AddOrUpdate(occupant);
             }
         }
 
@@ -236,6 +243,7 @@ namespace CircuitFoundry.Grid
             {
                 if (grid.Remove(occupant.Origin, layer))
                 {
+                    beltNetwork?.RemoveAt(occupant.Origin);
                     if (spawnedByOrigin.TryGetValue(occupant.Origin, out var instance))
                     {
                         Destroy(instance);

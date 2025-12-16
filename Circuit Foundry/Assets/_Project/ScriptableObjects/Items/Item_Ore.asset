@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: ore
   displayName: Ore
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 98586ab56829c7e4eba26b61d803cfc1, type: 3}
   tags:
   - resource
   - raw

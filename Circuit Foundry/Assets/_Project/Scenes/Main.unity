@@ -28580,6 +28580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2111111110}
   - component: {fileID: 2111111111}
+  - component: {fileID: 2111111112}
   m_Layer: 0
   m_Name: PlacementTool
   m_TagString: Untagged
@@ -28616,6 +28617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 1800000001}
   targetCamera: {fileID: 330585545}
+  beltNetwork: {fileID: 2111111112}
   beltPrefab: {fileID: 8008099473114935379, guid: b9a568abd16619444b41a5921323c930, type: 3}
   ghostPrefab: {fileID: 8008099473114935379, guid: 79166e455007a1547a4df8a591cd6549, type: 3}
   raycastMask:
@@ -28628,6 +28630,19 @@ MonoBehaviour:
   rotateRightKey: 101
   toggleRemoveModeKey: 114
   ghostHeightOffset: 0.05
+--- !u!114 &2111111112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111111109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a90fef70c34c269df64cc13c3531b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1800000001}
 --- !u!1 &2112489651
 GameObject:
   m_ObjectHideFlags: 0
