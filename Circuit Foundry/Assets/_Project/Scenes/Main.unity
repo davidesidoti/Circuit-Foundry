@@ -28581,6 +28581,7 @@ GameObject:
   - component: {fileID: 2111111110}
   - component: {fileID: 2111111111}
   - component: {fileID: 2111111112}
+  - component: {fileID: 2111111113}
   m_Layer: 0
   m_Name: PlacementTool
   m_TagString: Untagged
@@ -28618,6 +28619,7 @@ MonoBehaviour:
   grid: {fileID: 1800000001}
   targetCamera: {fileID: 330585545}
   beltNetwork: {fileID: 2111111112}
+  beltSimulator: {fileID: 2111111113}
   beltPrefab: {fileID: 8008099473114935379, guid: b9a568abd16619444b41a5921323c930, type: 3}
   ghostPrefab: {fileID: 8008099473114935379, guid: 79166e455007a1547a4df8a591cd6549, type: 3}
   raycastMask:
@@ -28643,6 +28645,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1800000001}
+--- !u!114 &2111111113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111111109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f37626b8534440b9fb2d737d8998e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1800000001}
+  beltNetwork: {fileID: 2111111112}
+  itemVisualPrefab: {fileID: 6652888494787182200, guid: 6bbdea238d46e3249a72a2f99b17a9fb, type: 3}
+  tickDelta: 0.02
+  beltSpeed: 0.1
+  minSpacing: 0.2
+  itemHeight: 0.1
+  autoSpawn: 1
+  spawnInterval: 0.2
+  debugItemId: ore
+  spawnBurst: 1
 --- !u!1 &2112489651
 GameObject:
   m_ObjectHideFlags: 0

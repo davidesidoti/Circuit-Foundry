@@ -10,6 +10,7 @@ namespace CircuitFoundry.Grid
         [SerializeField] private GridManager grid;
         [SerializeField] private Camera targetCamera;
         [SerializeField] private BeltNetwork beltNetwork;
+        [SerializeField] private BeltSimulator beltSimulator;
         [SerializeField] private GameObject beltPrefab;
         [SerializeField] private GameObject ghostPrefab;
         [SerializeField] private LayerMask raycastMask = ~0;
@@ -48,6 +49,11 @@ namespace CircuitFoundry.Grid
             if (beltNetwork == null)
             {
                 beltNetwork = FindObjectOfType<BeltNetwork>();
+            }
+
+            if (beltSimulator == null)
+            {
+                beltSimulator = FindObjectOfType<BeltSimulator>();
             }
 
             SpawnGhost();
@@ -143,7 +149,9 @@ namespace CircuitFoundry.Grid
 
             var hasOccupant = grid.TryGetOccupantAtCell(hitCell, layer, out _);
             removalValid = hasOccupant;
-            placementValid = !removeMode && grid.CanPlace(hitCell, beltTileType, layer, rotation);
+            placementValid = !removeMode &&
+                             grid.CanPlace(hitCell, beltTileType, layer, rotation) &&
+                             IsBeltFacingCompatible(hitCell, rotation);
         }
 
         private void UpdateGhost()
@@ -166,6 +174,24 @@ namespace CircuitFoundry.Grid
             bool rightHeld = mouse != null && mouse.rightButton.isPressed;
             var (color, alpha) = DetermineGhostColor(rightHeld);
             ApplyGhostColor(color, alpha);
+        }
+
+        private bool IsBeltFacingCompatible(Vector2Int origin, TileRotation desiredRotation)
+        {
+            var forwardDir = GridDirectionUtils.ToVector(GridDirectionUtils.FromRotation(desiredRotation));
+            var forwardCell = origin + forwardDir;
+
+            // Disallow placing facing directly into an opposite-facing belt head-on.
+            if (grid.TryGetOccupantAtCell(forwardCell, GridLayer.Belt, out var forwardOcc))
+            {
+                var forwardDirOfNeighbor = GridDirectionUtils.FromRotation(forwardOcc.Rotation);
+                if (forwardDirOfNeighbor == GridDirectionUtils.Opposite(GridDirectionUtils.FromRotation(desiredRotation)))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private (Color color, float alpha) DetermineGhostColor(bool rightHeld)
@@ -223,6 +249,7 @@ namespace CircuitFoundry.Grid
             {
                 SpawnBeltVisual(occupant);
                 beltNetwork?.AddOrUpdate(occupant);
+                beltSimulator?.OnBeltPlaced(occupant);
             }
         }
 
@@ -244,6 +271,7 @@ namespace CircuitFoundry.Grid
                 if (grid.Remove(occupant.Origin, layer))
                 {
                     beltNetwork?.RemoveAt(occupant.Origin);
+                    beltSimulator?.OnBeltRemoved(occupant.Origin);
                     if (spawnedByOrigin.TryGetValue(occupant.Origin, out var instance))
                     {
                         Destroy(instance);
